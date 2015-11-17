@@ -5,5 +5,4 @@ before_install:
   - curl https://install.meteor.com/ | sh
   - npm install velocity-cli -g
 script:
-  - ls -la
-  - velocity test-app --ci
+  - velocity test-app --ci --verbose
