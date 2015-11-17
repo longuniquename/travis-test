@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - stable
+before_install:
+  - curl https://install.meteor.com/ | sh
+  - npm install velocity-cli -g
+services:
+  - mongodb
+script:
+  - velocity test-app --ci
