@@ -5,4 +5,6 @@ before_install:
   - curl https://install.meteor.com/ | sh
   - npm install velocity-cli -g
 script:
-  - velocity test-app --ci --verbose
+  - velocity test-app --once --ci
+after_failure:
+- "cat /home/travis/build/longuniquename/travis-test/.meteor/local/log/cucumber.log"
