@@ -1,7 +1,7 @@
 language: node_js
-node_js: "0.12.7"
+node_js: "4.2.2"
 before_install:
-  - curl https://install.meteor.com | /bin/sh
+  - curl https://install.meteor.com/ | sh
   - npm install -g velocity-cli
 before_script:
   - export DISPLAY=:99.0
