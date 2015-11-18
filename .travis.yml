@@ -1,6 +1,6 @@
 language: node_js
-node_js:
-  - stable
+node_js: stable
+sudo: required
 before_install:
   - curl https://install.meteor.com/ | sh
   - npm install -g velocity-cli
@@ -9,7 +9,5 @@ before_script:
   - sh -e /etc/init.d/xvfb start
   - export PATH=$HOME/.meteor:$PATH
   - sleep 10
-script:
-  - JASMINE_SERVER_INTEGRATION=0 JASMINE_SERVER_UNIT=0 VELOCITY_DEBUG=1 JASMINE_BROWSER=Firefox velocity test-app --once --ci
-after_failure:
-  - cat ./.meteor/local/log/cucumber.log
+script: JASMINE_SERVER_INTEGRATION=0 JASMINE_SERVER_UNIT=0 VELOCITY_DEBUG=1 JASMINE_BROWSER=Firefox velocity test-app --once --ci
+after_failure: cat ./.meteor/local/log/cucumber.log
